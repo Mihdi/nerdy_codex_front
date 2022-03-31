@@ -8,29 +8,33 @@ import {teal, deepPurple} from '@mui/material/colors';
 
 import Navbar from './Navbar';
 
-const dark_theme = createTheme({
+import phrases from './phrases';
+
+const defaultTheme = createTheme({
   palette: {
     primary: {
       main: deepPurple[500]
     },
     secondary: {
       main: teal[500]
-    }
+    },
   }
 });
+
 
 function App() {
   return (
     <div style={{"marginTop": "80px"}}>
-      <ThemeProvider theme={dark_theme}>
-        <Navbar />
+      <ThemeProvider theme={defaultTheme}>
+        <Navbar phrases={phrases}/>
         <header style={{"textAlign": "center"}}>
           <Typography variant="h1">
-            The Nerdy Codex!
+            {phrases.websiteName}
           </Typography>
           <Typography variant="subtitle1">
-            The Nerdy Codex is Mehdi "Arcanite" OUESLATI's personal blog.
+            {phrases.websiteDescription}
           </Typography>
+            <img src="./try.svg" alt={phrases.logoAlt}/>
         </header>
       </ThemeProvider>
     </div>

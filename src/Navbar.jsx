@@ -2,38 +2,33 @@ import * as React from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import {Login, AppRegistration} from '@mui/icons-material';
-import Icon from './Icon';
+import {Login, AppRegistration, Newspaper, Person, ContactPage} from '@mui/icons-material';
 
-function Navbar(){
+function Navbar(props){
   return (
       <AppBar>
         <Toolbar>
-          <IconButton>
-            <Icon/>
-          </IconButton>
           <Typography variant="h6">
-            The Nerdy Codex
+            {props.phrases.websiteName}
           </Typography>
           <ButtonGroup variant="outline" color="primary">
             <Button
-              startIcon={<AppRegistration />}
+              startIcon={<Newspaper />}
             >
-              The Articles
+              {props.phrases.navArticle}
             </Button>
             <Button
-              startIcon={<AppRegistration />}
+              startIcon={<Person />}
             >
-              About Me
+              {props.phrases.navAboutMe}
             </Button>
             <Button
-              startIcon={<AppRegistration />}
+              startIcon={<ContactPage />}
             >
-              Contact Me
+              {props.phrases.navContactMe}
             </Button>
           </ButtonGroup>
           <ButtonGroup 
@@ -45,13 +40,13 @@ function Navbar(){
               startIcon={<AppRegistration />}
               color="primary"
             > 
-              Sign Up
+              {props.phrases.navSignUp}
             </Button>
             <Button
               startIcon={<Login />}
               color="secondary"
             > 
-              Log In
+              {props.phrases.navLogIn}
             </Button>
           </ButtonGroup>
         </Toolbar>

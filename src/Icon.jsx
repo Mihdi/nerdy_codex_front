@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import SvgIcon from '@mui/material/SvgIcon';
-import { ReactComponent as Logo } from './logo.svg';
+import CrowIcon from './CrowIcon'
 
 function Icon(props) {
-	return (	
+	return (
 		<SvgIcon>
-			<Logo />
+			<CrowIcon />
 		</SvgIcon>
 	)
 };
