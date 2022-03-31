@@ -2,35 +2,31 @@ import React, {useState} from 'react';
 
 import '@fontsource/roboto'
 
-import {ThemeProvider, createTheme} from '@mui/material/styles';
-import {teal, deepPurple} from '@mui/material/colors';
+import {ThemeProvider} from '@mui/material/styles';
 
-import Navbar from './Navbar';
+import AboutMe from './AboutMe';
+import Articles from './Articles';
+import ContactMe from './ContactMe';
 import LandingPage from './LandingPage';
-import phrases from './phrases';
+import LogIn from './LogIn';
+import Navbar from './Navbar';
+import SignUp from './SignUp';
 
-const defaultTheme = createTheme({
-  palette: {
-    primary: {
-      main: deepPurple[500]
-    },
-    secondary: {
-      main: teal[500]
-    },
-  }
-});
+import phrases from './phrases';
+import {darkTheme, dorkTheme, defaultTheme} from './themes.js'
 
 /*
  * right now, I assume the navbar has the same infos about the uids, but I could make a more generic thing... 
- * would it be worth the extra complexity?
+ * would it be worth the extra complexity? 
+ * anyway, as long as it's not generic enough to be configurable from a single point, it's not in its own js file
  */
 const subpages = [
   {uid: "default", display: <LandingPage phrases={phrases} />},
-  {uid: "articles", display: <p> articles </p>},
-  {uid: "aboutme", display: <p> aboutme </p>},
-  {uid: "contactme", display: <p> contactme </p>},
-  {uid: "signup", display: <p> signup </p>},
-  {uid: "login", display: <p> login </p>},
+  {uid: "articles", display: <Articles />},
+  {uid: "aboutme", display: <AboutMe />},
+  {uid: "contactme", display: <ContactMe />},
+  {uid: "signup", display: <SignUp />},
+  {uid: "login", display: <LogIn />},
 ]
 
 function App() {
