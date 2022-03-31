@@ -1,9 +1,9 @@
 import {createTheme} from '@mui/material/styles';
-import {teal, deepPurple} from '@mui/material/colors';
-import {orange, green} from '@mui/material/colors';
-import {red, blue} from '@mui/material/colors';
+import {teal, deepPurple, blueGrey} from '@mui/material/colors';
+import {pink, green} from '@mui/material/colors';
 
 const defaultTheme = createTheme({
+  mode: "light",
   palette: {
     primary: {
       main: deepPurple[500]
@@ -14,25 +14,39 @@ const defaultTheme = createTheme({
   }
 });
 
+
 const darkTheme = createTheme({
+  mode: "dark",
   palette: {
+    background: {
+      default: blueGrey[900]
+    },
     primary: {
-      main: orange[500]
+      main: deepPurple[400]
     },
     secondary: {
-      main: green[500]
+      main: teal[500]
     },
-  }
+    text: {
+      primary: "rgba(255, 255, 255, 0.87)",
+    }
+  },
 });
 
 const dorkTheme = createTheme({
   palette: {
+    background: {
+      default: green[100]
+    },
     primary: {
-      main: red[500]
+      main: pink[500]
     },
     secondary: {
-      main: blue[500]
+      main: green[500]
     },
+  },
+  typography: {
+    fontFamily: ['Comic Neue']
   }
 });
 

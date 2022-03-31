@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 
-import '@fontsource/roboto'
+import '@fontsource/roboto';
+import '@fontsource/comic-neue';
 
+import CssBaseline from "@mui/material/CssBaseline";
 import {ThemeProvider} from '@mui/material/styles';
 
 import AboutMe from './AboutMe';
@@ -13,29 +15,43 @@ import Navbar from './Navbar';
 import SignUp from './SignUp';
 
 import phrases from './phrases';
-import {darkTheme, dorkTheme, defaultTheme} from './themes.js'
+import {darkTheme, dorkTheme, defaultTheme} from './themes.js';
 
-/*
- * right now, I assume the navbar has the same infos about the uids, but I could make a more generic thing... 
- * would it be worth the extra complexity? 
- * anyway, as long as it's not generic enough to be configurable from a single point, it's not in its own js file
- */
-const subpages = [
-  {uid: "default", display: <LandingPage phrases={phrases} />},
-  {uid: "articles", display: <Articles />},
-  {uid: "aboutme", display: <AboutMe />},
-  {uid: "contactme", display: <ContactMe />},
-  {uid: "signup", display: <SignUp />},
-  {uid: "login", display: <LogIn />},
-]
+import {teal, deepPurple} from '@mui/material/colors';
+
 
 function App() {
-  const [subpage, setSubpage] = useState("default");
-  const display = subpages.filter((sp) => sp.uid === subpage)[0].display;
+  const [subpageUID, setSubpageUID] = useState("default");
+  const [themeUID, setThemeUID] = useState("dark");
+
+  const themes = [
+    {uid: "default", theme: defaultTheme},
+    {uid: "dark", theme: darkTheme},
+    {uid: "dork", theme: dorkTheme},    
+  ];
+  console.log("uid is ", themeUID);
+  const theme = themes.filter((t) => t.uid === themeUID)[0].theme;
+
+  /*
+   * right now, I assume the navbar has the same infos about the uids, but I could make a more generic thing... 
+   * would it be worth the extra complexity? 
+   * anyway, as long as it's not generic enough to be configurable from a single point, it's not in its own js file
+   */
+  const subpages = [
+    {uid: "default", display: <LandingPage phrases={phrases} logoColor={theme.palette.primary.main}/>},
+    {uid: "articles", display: <Articles />},
+    {uid: "aboutme", display: <AboutMe />},
+    {uid: "contactme", display: <ContactMe />},
+    {uid: "signup", display: <SignUp />},
+    {uid: "login", display: <LogIn />},
+  ];
+
+  const display = subpages.filter((sp) => sp.uid === subpageUID)[0].display;
   return (
     <div style={{"marginTop": "80px"}}>
-      <ThemeProvider theme={defaultTheme}>
-        <Navbar phrases={phrases} changePage={setSubpage}/>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Navbar phrases={phrases} changePage={setSubpageUID} changeTheme={setThemeUID} theme={themeUID}/>
         {display}
       </ThemeProvider>
     </div>

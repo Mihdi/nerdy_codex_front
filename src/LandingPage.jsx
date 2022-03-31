@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import Typography from '@mui/material/Typography';
 
+import CrowIcon from './CrowIcon';
+
 function LandingPage(props) {
   return (
         <header style={{"textAlign": "center"}}>
@@ -11,7 +13,7 @@ function LandingPage(props) {
           <Typography variant="subtitle1">
             {props.phrases.websiteDescription}
           </Typography>
-            <img src="./try.svg" alt={props.phrases.logoAlt}/>
+            <CrowIcon color={props.logoColor}/>
         </header>
   );
 }

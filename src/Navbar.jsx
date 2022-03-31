@@ -5,7 +5,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import {Login, AppRegistration, Newspaper, Person, ContactPage} from '@mui/icons-material';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
+import {Login, AppRegistration, Newspaper, Person, ContactPage, ColorLens} from '@mui/icons-material';
+
+import Icon from './Icon';
 
 function Navbar(props){
   return (
@@ -57,6 +62,19 @@ function Navbar(props){
               {props.phrases.navLogIn}
             </Button>
           </ButtonGroup>
+          <Select
+            startIcon={<ColorLens />}
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={props.theme}
+            label="Theme"
+            size="large"
+            onChange={({target: {value}}) => props.changeTheme(value)}
+          >
+            <MenuItem value={"default"}>Default</MenuItem>
+            <MenuItem value={"dark"}>Dark</MenuItem>
+            <MenuItem value={"dork"}>Dork</MenuItem>
+          </Select>
         </Toolbar>
       </AppBar>
   );
