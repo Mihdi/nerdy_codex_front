@@ -11,22 +11,28 @@ function Navbar(props){
   return (
       <AppBar>
         <Toolbar>
-          <Typography variant="h6">
+          <Typography 
+            variant="h6"
+            onClick={() => props.changePage("default")}
+          >
             {props.phrases.websiteName}
           </Typography>
           <ButtonGroup variant="outline" color="primary">
             <Button
               startIcon={<Newspaper />}
+              onClick={() => props.changePage("articles")}
             >
               {props.phrases.navArticle}
             </Button>
             <Button
               startIcon={<Person />}
+              onClick={() => props.changePage("aboutme")}
             >
               {props.phrases.navAboutMe}
             </Button>
             <Button
               startIcon={<ContactPage />}
+              onClick={() => props.changePage("contactme")}
             >
               {props.phrases.navContactMe}
             </Button>
@@ -39,12 +45,14 @@ function Navbar(props){
             <Button
               startIcon={<AppRegistration />}
               color="primary"
+              onClick={() => props.changePage("signup")}
             > 
               {props.phrases.navSignUp}
             </Button>
             <Button
               startIcon={<Login />}
               color="secondary"
+              onClick={() => props.changePage("login")}
             > 
               {props.phrases.navLogIn}
             </Button>
