@@ -17,9 +17,6 @@ import SignUp from './SignUp';
 import phrases from './phrases';
 import {darkTheme, dorkTheme, defaultTheme} from './themes.js';
 
-import {teal, deepPurple} from '@mui/material/colors';
-
-
 function App() {
   const [subpageUID, setSubpageUID] = useState("default");
   const [themeUID, setThemeUID] = useState("dark");
@@ -38,7 +35,13 @@ function App() {
    * anyway, as long as it's not generic enough to be configurable from a single point, it's not in its own js file
    */
   const subpages = [
-    {uid: "default", display: <LandingPage phrases={phrases} logoColor={theme.palette.primary.main}/>},
+    {uid: "default", display: (
+      <LandingPage 
+        phrases={phrases}
+        logoColor={theme.palette.primary.main}
+        changePage={setSubpageUID}
+      />
+    )},
     {uid: "articles", display: <Articles />},
     {uid: "aboutme", display: <AboutMe />},
     {uid: "contactme", display: <ContactMe />},

@@ -10,8 +10,6 @@ import MenuItem from '@mui/material/MenuItem';
 
 import {Login, AppRegistration, Newspaper, Person, ContactPage, ColorLens} from '@mui/icons-material';
 
-import Icon from './Icon';
-
 function Navbar(props){
   return (
       <AppBar>
@@ -20,26 +18,26 @@ function Navbar(props){
             variant="h6"
             onClick={() => props.changePage("default")}
           >
-            {props.phrases.websiteName}
+            {props.phrases.websiteName(props)}
           </Typography>
           <ButtonGroup variant="outline" color="primary">
             <Button
               startIcon={<Newspaper />}
               onClick={() => props.changePage("articles")}
             >
-              {props.phrases.navArticle}
+              {props.phrases.navArticle(props)}
             </Button>
             <Button
               startIcon={<Person />}
               onClick={() => props.changePage("aboutme")}
             >
-              {props.phrases.navAboutMe}
+              {props.phrases.navAboutMe(props)}
             </Button>
             <Button
               startIcon={<ContactPage />}
               onClick={() => props.changePage("contactme")}
             >
-              {props.phrases.navContactMe}
+              {props.phrases.navContactMe(props)}
             </Button>
           </ButtonGroup>
           <ButtonGroup 
@@ -52,14 +50,14 @@ function Navbar(props){
               color="primary"
               onClick={() => props.changePage("signup")}
             > 
-              {props.phrases.navSignUp}
+              {props.phrases.navSignUp(props)}
             </Button>
             <Button
               startIcon={<Login />}
               color="secondary"
               onClick={() => props.changePage("login")}
             > 
-              {props.phrases.navLogIn}
+              {props.phrases.navLogIn(props)}
             </Button>
           </ButtonGroup>
           <Select
@@ -69,6 +67,7 @@ function Navbar(props){
             value={props.theme}
             label="Theme"
             size="large"
+            color="secondary"
             onChange={({target: {value}}) => props.changeTheme(value)}
           >
             <MenuItem value={"default"}>Default</MenuItem>

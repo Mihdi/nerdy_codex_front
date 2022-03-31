@@ -6,15 +6,15 @@ const phrasing_parameters = {
 }
 
 const phrases = {
-  websiteName: phrasing_parameters.websiteName,
-  ownerName: phrasing_parameters.ownerName,
-  websiteDescription: <span> {phrasing_parameters.websiteName} is <Button variant="text"> {phrasing_parameters.ownerName}</Button>'s personal blog. </span>,
-  navArticle: "Articles",
-  navAboutMe: "About Me",
-  navContactMe: "Contact Me",
-  navSignUp: "Sign Up",
-  navLogIn: "Log IN",
-  logoAlt: "A minimalistic shape of crow with neurons composing the body."
+  websiteName:(props) =>  phrasing_parameters.websiteName,
+  ownerName: (props) => phrasing_parameters.ownerName,
+  websiteDescription: (props) => <span> {phrasing_parameters.websiteName} is <Button variant="text" onClick={() => props.changePage("aboutme")}> {phrasing_parameters.ownerName}</Button>'s personal blog. </span>,
+  navArticle: (props) => "Articles",
+  navAboutMe: (props) => "About Me",
+  navContactMe: (props) => "Contact Me",
+  navSignUp: (props) => "Sign Up",
+  navLogIn: (props) => "Log IN",
+  logoAlt: (props) => "A minimalistic shape of crow with neurons composing the body."
 }
 
 export default phrases;
