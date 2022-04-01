@@ -36,11 +36,12 @@ function App() {
         changePage={setSubpageUID}
       />
     )},
-    {uid: "articles", display: <Articles />},
+    {uid: "articles", display: <Articles phrases={phrases} theme={theme}/>},
     {uid: "aboutme", display: <AboutMe />},
     {uid: "contactme", display: <ContactMe />},
     {uid: "signup", display: <SignUp />},
     {uid: "login", display: <LogIn />},
+    {uid: "secret", display: <p> Shhhhh </p>},
   ];
 
   const display = subpages.filter((sp) => sp.uid === subpageUID)[0].display;

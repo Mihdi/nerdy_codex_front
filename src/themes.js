@@ -29,6 +29,7 @@ const darkTheme = createTheme({
     },
     text: {
       primary: "rgba(255, 255, 255, 0.87)",
+      secondary: blueGrey[200]
     }
   },
 });
@@ -51,7 +52,7 @@ const dorkTheme = createTheme({
 });
 
 const themes = [
-  {uid: "default", theme: defaultTheme, display: "Default"},
+  {uid: "default", theme: defaultTheme, display: "Light"},
   {uid: "dark", theme: darkTheme, display: "Dark"},
   {uid: "dork", theme: dorkTheme, display: "Dork"},    
 ];

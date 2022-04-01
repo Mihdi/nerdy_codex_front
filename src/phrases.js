@@ -14,7 +14,10 @@ const phrases = {
   navContactMe: (props) => "Contact Me",
   navSignUp: (props) => "Sign Up",
   navLogIn: (props) => "Log IN",
-  logoAlt: (props) => "A minimalistic shape of crow with neurons composing the body."
+  navSecret: (props) => "Chamber of Secrets",
+  logoAlt: (props) => "A minimalistic shape of crow with neurons composing the body.",
+  share: (props) => "Share",
+  read: (props) => "Read",
 }
 
 export default phrases;

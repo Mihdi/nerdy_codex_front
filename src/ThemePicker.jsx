@@ -35,7 +35,7 @@ function ThemePicker(props) {
 
   return (
     <React.Fragment>
-      <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
+      <ButtonGroup variant="contained" size="large" ref={anchorRef} aria-label="split button">
         <Button>{props.themes.filter((e) => e.uid === props.themeUID)[0].display}</Button>
         <Button
           size="small"
