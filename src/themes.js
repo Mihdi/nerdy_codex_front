@@ -50,4 +50,10 @@ const dorkTheme = createTheme({
   }
 });
 
-export {darkTheme, dorkTheme, defaultTheme};
+const themes = [
+  {uid: "default", theme: defaultTheme, display: "Default"},
+  {uid: "dark", theme: darkTheme, display: "Dark"},
+  {uid: "dork", theme: dorkTheme, display: "Dork"},    
+];
+
+export default themes;

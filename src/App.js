@@ -15,18 +15,12 @@ import Navbar from './Navbar';
 import SignUp from './SignUp';
 
 import phrases from './phrases';
-import {darkTheme, dorkTheme, defaultTheme} from './themes.js';
+import themes from './themes.js';
 
 function App() {
   const [subpageUID, setSubpageUID] = useState("default");
-  const [themeUID, setThemeUID] = useState("dark");
+  const [themeUID, setThemeUID] = useState("default");
 
-  const themes = [
-    {uid: "default", theme: defaultTheme},
-    {uid: "dark", theme: darkTheme},
-    {uid: "dork", theme: dorkTheme},    
-  ];
-  console.log("uid is ", themeUID);
   const theme = themes.filter((t) => t.uid === themeUID)[0].theme;
 
   /*
@@ -54,7 +48,14 @@ function App() {
     <div style={{"marginTop": "80px"}}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Navbar phrases={phrases} changePage={setSubpageUID} changeTheme={setThemeUID} theme={themeUID}/>
+        <Navbar 
+          phrases={phrases}
+          changePage={setSubpageUID}
+          theme={theme}
+          themes={themes}
+          changeTheme={setThemeUID}
+          themeUID={themeUID}
+        />
         {display}
       </ThemeProvider>
     </div>
