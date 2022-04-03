@@ -19,7 +19,7 @@ import themes from './themes.js';
 
 function App() {
   const [subpageUID, setSubpageUID] = useState("default");
-  const [themeUID, setThemeUID] = useState("default");
+  const [themeUID, setThemeUID] = useState("dark");
 
   const theme = themes.filter((t) => t.uid === themeUID)[0].theme;
 
