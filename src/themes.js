@@ -1,15 +1,16 @@
 import {createTheme} from '@mui/material/styles';
 import {teal, deepPurple, blueGrey} from '@mui/material/colors';
+import {yellow, purple} from '@mui/material/colors';
 import {pink, green} from '@mui/material/colors';
 
 const defaultTheme = createTheme({
   mode: "light",
   palette: {
     primary: {
-      main: deepPurple[500]
+      main: purple[700]
     },
     secondary: {
-      main: teal[500]
+      main: yellow[700]
     },
   }
 });

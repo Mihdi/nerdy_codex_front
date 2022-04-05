@@ -5,56 +5,47 @@ import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import { SportsHandball } from '@mui/icons-material';
 
 
 function change(setter, {target: {value}}){
   setter(value);
 }
 
-function handleSubmit(e, email, password, callback){
+function handleSubmit(e, password, callback){
   e.preventDefault();
 
   console.log("checking that it works!")
-  console.log(`Got ${email} and ${password}`);
-  callback(email, password);
+  console.log(`Got ${password}`);
+  callback(password);
 }
 
-function LogIn(props) {
-  const [email, setEmail] = useState("");
+function ChamberOfSecrets(props) {
   const [password, setPassword] = useState("");
 
   return (
       <Container>
-        <form onSubmit={(e) => handleSubmit(e, email, password, (email, password) => {})}>
-          <Typography 
+        <form onSubmit={(e) => handleSubmit(e, password, (email, password) => {})}>
+          <Typography
             variant="h2"
             component="h2"
             style={{
               textAlign: "center",
             }}
-          > 
-            Log In 
+          >
+            The Chamber of Secrets 
           </Typography>
           <TextField
-            helperText="Please enter your email here"
-            placeholder="john.doe@somemail.com"
-            id="email"
-            label="email"
-            value={email}
-            onChange={(e) => change(setEmail, e)}
-            fullWidth
-            style={{
-              marginBottom: "1vh"
-            }}
-          />
-          <TextField
-            helperText="Please enter your password here"
+            helperText="Throw a secret in the well..."
             id="password"
-            label="password"
+            label="secret"
             type="password"
             value={password}
             onChange={(e) => change(setPassword, e)}
             fullWidth
+            style={{
+              marginBottom: "2vh"
+            }}
           />
           <Divider />
           <Button 
@@ -62,13 +53,14 @@ function LogIn(props) {
             variant="contained"
             color="secondary"
             size="large"
+            startIcon={<SportsHandball/>}
             fullWidth
           > 
-            Send 
+            Throw 
           </Button>
         </form>
       </Container>
   );
 }
 
-export default LogIn;
+export default ChamberOfSecrets;

@@ -8,6 +8,7 @@ import {ThemeProvider} from '@mui/material/styles';
 
 import AboutMe from './AboutMe';
 import Articles from './Articles';
+import ChamberOfSecrets from './ChamberOfSecrets';
 import ContactMe from './ContactMe';
 import LandingPage from './LandingPage';
 import LogIn from './LogIn';
@@ -41,7 +42,7 @@ function App() {
     {uid: "contactme", display: <ContactMe />},
     {uid: "signup", display: <SignUp />},
     {uid: "login", display: <LogIn />},
-    {uid: "secret", display: <p> Shhhhh </p>},
+    {uid: "secret", display: <ChamberOfSecrets/>},
   ];
 
   const display = subpages.filter((sp) => sp.uid === subpageUID)[0].display;
