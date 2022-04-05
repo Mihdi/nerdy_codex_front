@@ -38,7 +38,7 @@ function App() {
       />
     )},
     {uid: "articles", display: <Articles phrases={phrases} theme={theme}/>},
-    {uid: "aboutme", display: <AboutMe />},
+    {uid: "aboutme", display: <AboutMe changePage={() => setSubpageUID("contactme")} />},
     {uid: "contactme", display: <ContactMe />},
     {uid: "signup", display: <SignUp />},
     {uid: "login", display: <LogIn />},
