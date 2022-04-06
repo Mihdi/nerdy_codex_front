@@ -18,8 +18,8 @@ function AboutMe(props) {
     // link.click();
   };
   return (
-    <Grid>
-      <Grid item xs={12} lg={12}>
+    <Grid container rowSpacing={2} columnSpacing={3}>
+      <Grid item xs={12}>
         <Typography
           variant="h2"
           component="h2"
@@ -27,46 +27,48 @@ function AboutMe(props) {
             textAlign: "center"
           }}
         >
-          About Mehdi `Arcanite` OUESLATI
+          Mehdi `Arcanite` OUESLATI
         </Typography>
       </Grid>
-      <Container>
-        <Grid container spacing={2}>
-          <Grid item xs={12} lg={6}>
-            <Button 
-              type="submit"
-              variant="contained"
-              color="primary"
-              size="large"
-              fullWidth
-              onClick={props.changePage}
-            > 
-              Contact Me 
-            </Button>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <Button 
-              type="submit"
-              variant="contained"
-              color="secondary"
-              size="large"
-              onClick={onDownload}
-              fullWidth
-            > 
-              Download my Resume
-            </Button>
-          </Grid>
+      <Grid item xs={12}>
+        <Container>
+          <Grid container spacing={2}>
+            <Grid item xs={12} lg={6}>
+              <Button 
+                type="submit"
+                variant="contained"
+                color="primary"
+                size="large"
+                fullWidth
+                onClick={props.changePage}
+              > 
+                Contact Me 
+              </Button>
+            </Grid>
+            <Grid item xs={12} lg={6}>
+              <Button 
+                type="submit"
+                variant="contained"
+                color="secondary"
+                size="large"
+                onClick={onDownload}
+                fullWidth
+              > 
+                Download my Resume
+              </Button>
+            </Grid>
 
-          <Grid item xs={12} lg={8}>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus ante, tempus eget lorem id, scelerisque rutrum magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam porttitor lacus ut tortor lacinia, a porttitor nisl consectetur. Donec mollis vitae nisl ut volutpat. Duis ex diam, ullamcorper non maximus ac, iaculis nec dolor. Vivamus suscipit ut sapien nec finibus. Mauris ultricies libero justo, eget iaculis diam congue non. Quisque vehicula nibh sit amet risus scelerisque efficitur. Fusce vitae ante ac ex interdum dapibus non eu enim. Nam aliquet lacus a magna mollis, et placerat sem tincidunt. Nam ultrices pharetra metus non sodales. Suspendisse vitae nunc nisl. Praesent id massa aliquam, venenatis arcu sed, rhoncus erat. Etiam at lobortis erat, iaculis sagittis ligula. Proin elementum nisl metus, congue maximus enim rhoncus eu. Duis a libero ut libero posuere malesuada ac a turpis.
-            </Typography>
+            <Grid item xs={12} lg={8}>
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus ante, tempus eget lorem id, scelerisque rutrum magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam porttitor lacus ut tortor lacinia, a porttitor nisl consectetur. Donec mollis vitae nisl ut volutpat. Duis ex diam, ullamcorper non maximus ac, iaculis nec dolor. Vivamus suscipit ut sapien nec finibus. Mauris ultricies libero justo, eget iaculis diam congue non. Quisque vehicula nibh sit amet risus scelerisque efficitur. Fusce vitae ante ac ex interdum dapibus non eu enim. Nam aliquet lacus a magna mollis, et placerat sem tincidunt. Nam ultrices pharetra metus non sodales. Suspendisse vitae nunc nisl. Praesent id massa aliquam, venenatis arcu sed, rhoncus erat. Etiam at lobortis erat, iaculis sagittis ligula. Proin elementum nisl metus, congue maximus enim rhoncus eu. Duis a libero ut libero posuere malesuada ac a turpis.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} lg={4}>
+              <Avatar alt="Mehdi OUESLATI" src="lena.png" sx={{ width: 200, height: 200 }} />
+            </Grid>
           </Grid>
-          <Grid item xs={12} lg={4}>
-            <Avatar alt="Mehdi OUESLATI" src="lena.png" sx={{ width: 200, height: 200 }} />
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Grid>
     </Grid>
   );
 }
