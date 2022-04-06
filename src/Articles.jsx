@@ -1,7 +1,8 @@
 import * as React from 'react';
 
-import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 import ArticlePreview from './ArticlePreview';
 
@@ -23,7 +24,9 @@ function Articles(props) {
         <Grid sx={{ flexGrow: 1 }} container spacing={3}>
           {mockArticles.map((article) => (
             <Grid item xs={12} md={4} lg={3} key={article.uid}>
-              <ArticlePreview  article ={article} phrases={props.phrases} theme={props.theme} />
+              <Button onClick={() => props.pickArticle(article.uid)}>
+                <ArticlePreview  article ={article} phrases={props.phrases} theme={props.theme} />
+              </Button> 
             </Grid>
           ))
         }

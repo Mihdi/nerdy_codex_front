@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import {ThemeProvider} from '@mui/material/styles';
 
 import AboutMe from './AboutMe';
+import Article from './Article';
 import Articles from './Articles';
 import ChamberOfSecrets from './ChamberOfSecrets';
 import ContactMe from './ContactMe';
@@ -21,6 +22,7 @@ import themes from './themes.js';
 function App() {
   const [subpageUID, setSubpageUID] = useState("default");
   const [themeUID, setThemeUID] = useState("dark");
+  const [articleUID, setArticleUID] = useState(undefined);
 
   const theme = themes.filter((t) => t.uid === themeUID)[0].theme;
 
@@ -37,12 +39,19 @@ function App() {
         changePage={setSubpageUID}
       />
     )},
-    {uid: "articles", display: <Articles phrases={phrases} theme={theme}/>},
+    {uid: "articles", display: (
+      <Articles
+        phrases={phrases}
+        theme={theme}
+        pickArticle={(id) => { setArticleUID(id); setSubpageUID("article"); }}
+      />
+    )},
     {uid: "aboutme", display: <AboutMe changePage={() => setSubpageUID("contactme")} />},
     {uid: "contactme", display: <ContactMe />},
     {uid: "signup", display: <SignUp />},
     {uid: "login", display: <LogIn />},
     {uid: "secret", display: <ChamberOfSecrets/>},
+    {uid: "article", display: <Article uid={articleUID}/>},
   ];
 
   const display = subpages.filter((sp) => sp.uid === subpageUID)[0].display;
