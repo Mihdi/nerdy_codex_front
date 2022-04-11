@@ -13,28 +13,33 @@ const NONVALIDATED_EDITOR_PERMS = 0x15;
 const UNKNOWN_VISITOR_PERMS = 0;
 
 const owner = {
+	name: "Arcanite",
 	email: "arcanite",
 	password: "foo",
 	permission_bits: OWNER_PERMS,
 };
 
 const validated_editor = {
+	name: "Crow",
 	email: "crow",
 	password: "foo",
 	permission_bits: VALIDATED_EDITOR_PERMS,
 };
 
 const nonvalidated_editor = {
+	name: "Alice",
 	email: "jack",
 	password: "foo",
 	permission_bits: NONVALIDATED_EDITOR_PERMS,
 };
 
 const unknown_visitor = {
+	name: "John Doe",
 	email: "john",
 	password: "foo",
 	permission_bits: UNKNOWN_VISITOR_PERMS,
 };
 
+const mocked_accounts = [owner, validated_editor, nonvalidated_editor, unknown_visitor];
 
-export default [owner, validated_editor, nonvalidated_editor, unknown_visitor];
+export default mocked_accounts;

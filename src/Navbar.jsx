@@ -1,10 +1,11 @@
 import * as React from 'react';
 
 import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
 import {Login, AppRegistration, Newspaper, Person, ContactPage, Key} from '@mui/icons-material';
 
@@ -80,6 +81,11 @@ function Navbar(props){
               > 
                 {props.phrases.navLogIn(props)}
               </Button>
+            </div>
+          }
+          {(props.user) &&
+            <div>
+              <Avatar alt={props.user.name} src="old_lena.png" />
             </div>
           }
           </ButtonGroup>
