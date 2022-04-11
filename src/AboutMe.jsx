@@ -27,7 +27,7 @@ function AboutMe(props) {
             textAlign: "center"
           }}
         >
-          Mehdi `Arcanite` OUESLATI
+          {props.phrases.ownerName(props)}
         </Typography>
       </Grid>
       <Grid item xs={12}>

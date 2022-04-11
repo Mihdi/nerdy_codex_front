@@ -64,20 +64,24 @@ function Navbar(props){
             /*TODO: get rid of CSS and find a better, mobile-first way of realizing the same thing. Maybe grids?*/
             style={{"display": "block", "right": "1vw", "position": "absolute"}}
           >
-            <Button
-              startIcon={<AppRegistration />}
-              color="primary"
-              onClick={() => props.changePage("signup")}
-            > 
-              {props.phrases.navSignUp(props)}
-            </Button>
-            <Button
-              startIcon={<Login />}
-              color="secondary"
-              onClick={() => props.changePage("login")}
-            > 
-              {props.phrases.navLogIn(props)}
-            </Button>
+          {(!props.user) &&
+            <div>
+              <Button
+                startIcon={<AppRegistration />}
+                color="primary"
+                onClick={() => props.changePage("signup")}
+              > 
+                {props.phrases.navSignUp(props)}
+              </Button>
+              <Button
+                startIcon={<Login />}
+                color="secondary"
+                onClick={() => props.changePage("login")}
+              > 
+                {props.phrases.navLogIn(props)}
+              </Button>
+            </div>
+          }
           </ButtonGroup>
         </Toolbar>
       </AppBar>

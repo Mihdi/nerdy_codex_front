@@ -23,6 +23,7 @@ function App() {
   const [subpageUID, setSubpageUID] = useState("default");
   const [themeUID, setThemeUID] = useState("dark");
   const [articleUID, setArticleUID] = useState(undefined);
+  const [user, setUser] = useState(undefined);
 
   const theme = themes.filter((t) => t.uid === themeUID)[0].theme;
 
@@ -46,10 +47,15 @@ function App() {
         pickArticle={(id) => { setArticleUID(id); setSubpageUID("article"); }}
       />
     )},
-    {uid: "aboutme", display: <AboutMe changePage={() => setSubpageUID("contactme")} />},
+    {uid: "aboutme", display: (
+      <AboutMe 
+        phrases={phrases}
+        changePage={() => setSubpageUID("contactme")}
+      />
+    )},
     {uid: "contactme", display: <ContactMe />},
     {uid: "signup", display: <SignUp />},
-    {uid: "login", display: <LogIn />},
+    {uid: "login", display: <LogIn setUser={(acc) => {setUser(acc); setSubpageUID("default");} }/>},
     {uid: "secret", display: <ChamberOfSecrets/>},
     {uid: "article", display: <Article uid={articleUID}/>},
   ];
@@ -66,6 +72,7 @@ function App() {
           themes={themes}
           changeTheme={setThemeUID}
           themeUID={themeUID}
+          user={user}
         />
         {display}
       </ThemeProvider>

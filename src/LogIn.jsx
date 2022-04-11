@@ -6,17 +6,20 @@ import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
+import mocked_accounts from './mocked_accounts';
 
 function change(setter, {target: {value}}){
   setter(value);
 }
 
+function get_matching_account(email, password){
+  return mocked_accounts.filter((user) => user.email === email && user.password === password)[0];
+}
+
 function handleSubmit(e, email, password, callback){
   e.preventDefault();
-
-  console.log("checking that it works!")
-  console.log(`Got ${email} and ${password}`);
-  callback(email, password);
+  const matching_account = get_matching_account(email, password);
+  callback(matching_account);
 }
 
 function LogIn(props) {
@@ -25,7 +28,7 @@ function LogIn(props) {
 
   return (
       <Container>
-        <form onSubmit={(e) => handleSubmit(e, email, password, (email, password) => {})}>
+        <form onSubmit={(e) => handleSubmit(e, email, password, props.setUser)}>
           <Typography 
             variant="h2"
             component="h2"
