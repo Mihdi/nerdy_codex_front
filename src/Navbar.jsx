@@ -15,6 +15,7 @@ import ThemePicker from './ThemePicker';
 function Navbar(props){
   //maybe make it so if we're currently on a subpage, then that subpage appears in a special manner?
   return (
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar>
         <Toolbar>
           <Typography 
@@ -83,13 +84,14 @@ function Navbar(props){
               }
               {(props.user) &&
                 <Button>
-                  <Avatar alt={props.user.name} src="old_lena.png" />
+                  <Avatar alt={props.user.name} src={props.user.avatar_img} />
                 </Button>
               }
               </ButtonGroup>
             </Box>
         </Toolbar>
       </AppBar>
+    </Box>
   );
 }
 

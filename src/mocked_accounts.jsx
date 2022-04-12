@@ -17,6 +17,7 @@ const owner = {
 	email: "arcanite",
 	password: "foo",
 	permission_bits: OWNER_PERMS,
+	avatar_img: "old_lena.png",
 };
 
 const validated_editor = {
@@ -24,6 +25,7 @@ const validated_editor = {
 	email: "crow",
 	password: "foo",
 	permission_bits: VALIDATED_EDITOR_PERMS,
+	avatar_img: "lena.png",
 };
 
 const nonvalidated_editor = {
@@ -31,6 +33,7 @@ const nonvalidated_editor = {
 	email: "jack",
 	password: "foo",
 	permission_bits: NONVALIDATED_EDITOR_PERMS,
+	avatar_img: "logo192.png",
 };
 
 const unknown_visitor = {
@@ -38,6 +41,7 @@ const unknown_visitor = {
 	email: "john",
 	password: "foo",
 	permission_bits: UNKNOWN_VISITOR_PERMS,
+	avatar_img: "icon5.png",
 };
 
 const mocked_accounts = [owner, validated_editor, nonvalidated_editor, unknown_visitor];
